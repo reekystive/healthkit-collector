@@ -19,15 +19,21 @@ if (!INFLUXDB_TOKEN || !INFLUXDB_URL || !INFLUXDB_ORG || !INFLUXDB_BUCKET) {
   throw new Error('INFLUXDB_TOKEN or INFLUXDB_URL or INFLUXDB_ORG or INFLUXDB_BUCKET is not set');
 }
 
+const createWriteApi = () => {
+  if (!INFLUXDB_ORG || !INFLUXDB_BUCKET) {
+    throw new Error('INFLUXDB_ORG or INFLUXDB_BUCKET is not set');
+  }
+  return client.getWriteApi(INFLUXDB_ORG, INFLUXDB_BUCKET, 'ns');
+};
+
 const app = new Koa();
 const router = new Router();
 
 const client = new InfluxDB({ url: INFLUXDB_URL, token: INFLUXDB_TOKEN });
 
-const writeApi = client.getWriteApi(INFLUXDB_ORG, INFLUXDB_BUCKET, 'ns');
-
-async function batchWriteHeartRateData(heartRateData: HeartRateMetric): Promise<void> {
+const batchWriteHeartRateData = async (heartRateData: HeartRateMetric): Promise<void> => {
   try {
+    const writeApi = createWriteApi();
     const points: Point[] = heartRateData.data.map((data) => {
       return new Point('heart_rate')
         .tag('source', data.source)
@@ -43,7 +49,7 @@ async function batchWriteHeartRateData(heartRateData: HeartRateMetric): Promise<
   } catch (error) {
     console.error('Failed to write heart rate data:', error);
   }
-}
+};
 
 const isMetricsData = (data: unknown): data is MetricsData =>
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-explicit-any
