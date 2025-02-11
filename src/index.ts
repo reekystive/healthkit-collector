@@ -64,9 +64,12 @@ router.post('/push/heart_rate', async (ctx: Context) => {
     await batchWriteHeartRateData(heartRateData);
   } catch (error) {
     console.error('Error processing metrics:', error);
-    ctx.status = 500;
-    ctx.body = { success: false, message: error instanceof Error ? error.message : 'Internal server error' };
+    ctx.response.status = 500;
+    ctx.response.body = { success: false, message: error instanceof Error ? error.message : 'Internal server error' };
   }
+  ctx.response.status = 200;
+  ctx.response.headers['content-type'] = 'application/json';
+  ctx.response.body = { success: true, message: 'Metrics received and processed successfully' };
 });
 
 app.use(bodyParser());
