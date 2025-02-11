@@ -42,6 +42,7 @@ const batchWriteHeartRateData = async (heartRateData: HeartRateMetric): Promise<
         .floatField('avg', data.Avg)
         .timestamp(new Date(data.date));
     });
+    console.log('Writing %o points', points.length);
     writeApi.writePoints(points);
     await writeApi.flush();
     await writeApi.close();
