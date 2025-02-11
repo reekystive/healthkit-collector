@@ -1,0 +1,28 @@
+# Logs
+logs/
+*.log
+pnpm-debug.log*
+
+# Node.js
+node_modules/
+
+# Build artifacts
+dist/
+dist-ssr/
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+
+# macOS
+.DS_Store
+
+# Environment variables
+.env.development
+.env.production
+.env.test
+.env.staging
+.env.local

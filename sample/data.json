@@ -1,0 +1,33 @@
+{
+  "data": {
+    "metrics": [
+      {
+        "name": "heart_rate",
+        "units": "count\/min",
+        "data": [
+          {
+            "Min": 75,
+            "date": "2025-02-04 00:16:00 +0800",
+            "source": "Reeky's Watch S9",
+            "Avg": 75,
+            "Max": 75
+          },
+          {
+            "Min": 81,
+            "Max": 81,
+            "source": "Reeky's Watch S9",
+            "Avg": 81,
+            "date": "2025-02-04 00:29:30 +0800"
+          },
+          {
+            "Max": 73,
+            "date": "2025-02-04 00:35:32 +0800",
+            "source": "Reeky's Watch S9",
+            "Min": 73,
+            "Avg": 73
+          }
+        ]
+      }
+    ]
+  }
+}

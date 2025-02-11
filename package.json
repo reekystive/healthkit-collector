@@ -1,0 +1,39 @@
+{
+  "name": "node-typescript-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --import tsx src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc --project tsconfig.json"
+  },
+  "devDependencies": {
+    "@cspell/eslint-plugin": "^8.17.3",
+    "@eslint/compat": "^1.2.6",
+    "@eslint/js": "^9.20.0",
+    "@types/eslint-config-prettier": "^6.11.3",
+    "@types/eslint__js": "^8.42.3",
+    "@types/koa__router": "^12.0.4",
+    "@types/node": "^22.13.1",
+    "eslint": "^9.20.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-define-config": "^2.1.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "globals": "^15.14.0",
+    "prettier": "^3.5.0",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.23.0"
+  },
+  "packageManager": "pnpm@9.14.2",
+  "dependencies": {
+    "@influxdata/influxdb-client": "^1.35.0",
+    "@koa/bodyparser": "^5.1.1",
+    "@koa/router": "^13.1.0",
+    "@types/koa": "^2.15.0",
+    "dotenv": "^16.4.7",
+    "koa": "^2.15.3"
+  }
+}

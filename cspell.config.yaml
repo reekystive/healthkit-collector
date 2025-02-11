@@ -1,0 +1,15 @@
+words:
+  - bodyparser
+  - compat
+  - influxdata
+  - reekystive
+  - healthkit
+flagWords:
+  - blacklist -> blocklist
+  - whitelist -> allowlist
+suggestWords:
+  - colour -> color
+ignorePaths:
+  - cspell.config.yaml
+  - pnpm-lock.yaml
+  - node_modules
