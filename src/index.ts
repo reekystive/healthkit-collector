@@ -49,6 +49,7 @@ const batchWriteHeartRateData = async (heartRateData: HeartRateMetric): Promise<
     console.log('Heart rate data batch written successfully');
   } catch (error) {
     console.error('Failed to write heart rate data:', error);
+    throw error;
   }
 };
 
