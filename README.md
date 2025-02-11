@@ -1,4 +1,4 @@
-# Health Kit Data Collector
+# HealthKit Collector
 
 通过一个 REST API 收集 Apple Health Kit 的数据并将其传送到 InfluxDB 中。
 
