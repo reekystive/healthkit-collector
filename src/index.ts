@@ -81,7 +81,13 @@ router.post('/push/heart_rate', async (ctx: Context) => {
   ctx.response.body = { success: true, message: 'Metrics received and processed successfully' };
 });
 
-app.use(bodyParser());
+app.use(
+  bodyParser({
+    encoding: 'utf-8',
+    jsonLimit: '5mb',
+  })
+);
+
 app.use(router.routes());
 app.use(router.allowedMethods());
 
