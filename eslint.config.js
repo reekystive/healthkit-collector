@@ -28,6 +28,7 @@ export default defineFlatConfig([
       },
       globals: { ...globals.node },
     },
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     rules: {
       ...eslintJs.configs.recommended.rules,
       ...tsEslint.configs.strictTypeChecked.reduce(
